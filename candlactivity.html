@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Jekyll v3.8.5" />
+    <title>Signin Template · Bootstrap</title>
+
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/4.3/examples/sign-in/"
+    />
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="styles.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body class="text-center">
+    <form class="form-signin needs-validation" action="/candlactivity" method="post" onsubmit="event.preventDefault();vf()">
+      <img
+        class="mb-4"
+        src="images/download.png"
+        alt=""
+        width="72"
+        height="72"
+      />
+      <h1 class="h3 mb-3 font-weight-normal">Add !</h1>
+      <input
+        type="text"
+        name="fname"
+        class="form-control fir"
+        placeholder="First Name"
+        required
+        autofocus
+      />
+      <input
+        type="text"
+        name="lname"
+        class="form-control sec"
+        placeholder="Last Name"
+        required
+        autofocus
+      />
+      <input
+        type="email"
+        name="email"
+        class="form-control thi"
+        placeholder="Email"
+        required
+        autofocus
+      />
+      <select id="hosp" name="hosp" class="form-control fou">
+      <option value="0">Select Hospital</option>
+      <option value="AIIMS">AIIMS</option>
+      <option value="GSPIMS">GSPIMS</option>
+      <option value="SNH">SNH</option>
+      <p id="in1" style="position:absolute;top:0px;left:550px;font-size:16px;display:block;">Incorrect Value!</p>
+      <!--<option value="Demo">Demo</option>-->
+      </select>
+      <select id="specs" name="specs" class="form-control fif">
+      <option value="0">Select Department</option>
+      <option value="orthopedic">Orthopedic</option>
+      <option value="gynaecology">Gynaecology</option>
+      <option value="radiology">radiology</option>
+      <option value="emergency">emergency</option>
+      </select>
+      <input type="date" id="d1" name="d1" class="form-control six">
+      <input type="time" id="t1" name="t1" class="form-control sev">
+    <!--  <div class="form-row">-->
+  <!--</div>-->
+      <button class="btn btn-lg btn-primary btn-block" type="submit">
+        Add Activity
+      </button>
+      <p class="mt-5 mb-3 text-muted">&copy; Shreyash Private Limited</p>
+    </form>
+    <p  id="in1" style="position:absolute;left:800px;top:350px;color:green;font-size:16px;display:none;">Incorrect Input</p>
+    <p  id="in2" style="position:absolute;left:800px;top:375px;color:green;font-size:16px;display:none;">Incorrect Input</p>
+    <script>
+    function vf() {
+      var x = document.forms[0]["hosp"].value;
+      var y = document.forms[0]["specs"].value;
+      if (x == "0"||y=="0") {
+        alert("Name must be filled out");
+        if(x=="0")
+        document.getElementById("in1").setAttribute("style","position:absolute;left:830px;top:350px;color:green;font-size:16px;display:block;");
+        if(y=="0")
+        document.getElementById("in2").setAttribute("style","position:absolute;left:830px;top:400px;color:green;font-size:16px;display:block;");
+        return false;
+      }
+      else {
+        document.forms[0].submit();
+        return true;
+
+      }
+    }
+    </script>
+  </body>
+</html>
